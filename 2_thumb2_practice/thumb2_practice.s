@@ -43,21 +43,22 @@ _start:
 	//
 	//ldr
 	//
-	movs	r0,	#0x0
-	ldr	r1,	[r0]
-	ldr	r2,	[r0, #4]
+	movs	r0,	#0x0 // store 0x0 to r0
+	ldr	r1,	[r0] // load content stored in 0x0 to r1
+	ldr	r2,	[r0, #4] // load content stored in 0x4 to r1
+
 
 	//
 	//str
 	//
-	movs	r0,	#0x20000000
-	str	r1,	[r0]
-	str	r2,	[r0, #4]
+	movs	r0,	#0x20000000 // store 0x20000000 to r0
+	str	r1,	[r0] // store r1 to 0x20000000
+	str	r2,	[r0, #4] // store r1 to 0x20000004
 
 	//
 	//b bl
 	//
-	bl	label01
+	bl	label01 // branch to label01
 
 sleep:
 	b	sleep
@@ -65,4 +66,4 @@ sleep:
 label01:
 	nop
 	nop
-	bx	lr
+	bx	lr // x:exchange: state switch(arm/thumb)
